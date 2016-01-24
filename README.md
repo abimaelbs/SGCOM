@@ -1,0 +1,2 @@
+# SGCOM
+Sistema Gerenciador Comercial
