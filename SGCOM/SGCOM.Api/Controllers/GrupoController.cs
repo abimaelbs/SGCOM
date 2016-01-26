@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SGCOM.Domain;
+using SGCOM.Infra.DataContexts;
+using System;
 using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Description;
-using SGCOM.Domain;
-using SGCOM.Infra.DataContexts;
 
 namespace SGCOM.Api.Controllers
 {
@@ -123,6 +119,5 @@ namespace SGCOM.Api.Controllers
             db.Dispose();            
             base.Dispose(disposing);
         }       
-
     }
 }
