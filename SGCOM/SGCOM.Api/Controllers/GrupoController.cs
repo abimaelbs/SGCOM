@@ -14,6 +14,7 @@ namespace SGCOM.Api.Controllers
     {
         private SGComDataContext db = new SGComDataContext();
 
+        [HttpGet]
         [Route("grupos")]
         public HttpResponseMessage GetGrupos()
         {
@@ -21,6 +22,7 @@ namespace SGCOM.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
+        [HttpGet]
         [Route("grupos/{grupoId}")]
         public HttpResponseMessage GetGruposById(int grupoId)
         {
@@ -95,7 +97,7 @@ namespace SGCOM.Api.Controllers
 
         //Update
         [HttpDelete]
-        [Route("grupos")]
+        [Route("grupos/{grupoId}")]
         public HttpResponseMessage DeleteGrupo(int grupoId)
         {
             if (grupoId < 0)
