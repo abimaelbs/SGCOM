@@ -1,5 +1,5 @@
-﻿using SGCOM.Domain;
-using SGCOM.Infra.DataContexts;
+﻿using SGCOM.Data.DataContexts;
+using SGCOM.Models;
 using System;
 using System.Data;
 using System.Linq;
@@ -9,10 +9,16 @@ using System.Web.Http;
 
 namespace SGCOM.Api.Controllers
 {
-    [RoutePrefix("api/v1/public")]
+    [RoutePrefix("api/v1")]
     public class GrupoController : ApiController
     {
+        #region Objeto Conexão
+
         private SGComDataContext db = new SGComDataContext();
+
+        #endregion
+
+        #region Filtros
 
         [HttpGet]
         [Route("grupos")]
@@ -30,6 +36,9 @@ namespace SGCOM.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
+        #endregion
+
+        #region Adicionar
         [HttpPost]
         [Route("grupos")]
         public HttpResponseMessage PostGrupos(Grupo grupo)
@@ -51,7 +60,9 @@ namespace SGCOM.Api.Controllers
             }            
         }
 
-        //Update
+        #endregion
+
+        #region Updates
         [HttpPatch]
         [Route("grupos")]
         public HttpResponseMessage PatchGrupo(Grupo grupo)
@@ -72,8 +83,7 @@ namespace SGCOM.Api.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar grupo.");
             }
         }
-
-        //Update
+        
         [HttpPut]
         [Route("grupos")]
         public HttpResponseMessage PutGrupo(Grupo grupo)
@@ -95,7 +105,9 @@ namespace SGCOM.Api.Controllers
             }
         }
 
-        //Update
+        #endregion
+
+        #region Delatar
         [HttpDelete]
         [Route("grupos/{grupoId}")]
         public HttpResponseMessage DeleteGrupo(int grupoId)
@@ -116,10 +128,16 @@ namespace SGCOM.Api.Controllers
             }
         }
 
+        #endregion
+
+        #region Dispose
+
         protected override void Dispose(bool disposing)
         {                        
             db.Dispose();            
             base.Dispose(disposing);
-        }       
+        }
+
+        #endregion
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 //using System.ComponentModel.DataAnnotations;
 
-namespace SGCOM.Domain
+namespace SGCOM.Models
 {
     public class Grupo
     {
@@ -11,10 +11,8 @@ namespace SGCOM.Domain
         }   
                 
         public int Id { get; set; }
-
         //[StringLength(60)]
         public string Titulo { get; set; }
-
         public DateTime DataCadastro { get; set; }
 
         public override string ToString()

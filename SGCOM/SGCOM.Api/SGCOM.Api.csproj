@@ -156,11 +156,21 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SGCOM.Data\SGCOM.Data.csproj">
+      <Project>{5cf3e6d3-0de1-41eb-b6f5-d29769b80544}</Project>
+      <Name>SGCOM.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SGCOM.Models\SGCOM.Models.csproj">
+      <Project>{599acfb4-ce8f-4b9c-88c9-b376576b2dae}</Project>
+      <Name>SGCOM.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -177,21 +187,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SGCOM.Domain\SGCOM.Domain.csproj">
-      <Project>{62b93495-0a45-4c1e-ac28-34e4cc3072e1}</Project>
-      <Name>SGCOM.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SGCOM.Infra\SGCOM.Infra.csproj">
-      <Project>{f26c8c75-e5ca-433e-94a0-1d01e8b3202e}</Project>
-      <Name>SGCOM.Infra</Name>
-    </ProjectReference>
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <None Include="Web.LOCAL.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LOCAL|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

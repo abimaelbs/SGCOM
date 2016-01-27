@@ -1,23 +1,27 @@
-﻿using SGCOM.Domain;
-using SGCOM.Infra.Mappings;
+﻿using SGCOM.Models;
+using SGCOM.Data.Mappings;
 using System.Data.Entity;
 
-namespace SGCOM.Infra.DataContexts
+namespace SGCOM.Data.DataContexts
 {
     public class SGComDataContext : DbContext
     {
-        public SGComDataContext() : base("SQComConnectionString")
+        public SGComDataContext() : base("SGCOMConectionString")
         {
             Database.SetInitializer<SGComDataContext>(new SGComDataContextInitializer());
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;
         }
 
+        #region Models
         public DbSet<Grupo> Grupos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        #endregion
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new GrupoMap());
+            modelBuilder.Configurations.Add(new UsuarioMap());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -30,7 +34,18 @@ namespace SGCOM.Infra.DataContexts
             context.Grupos.Add(new Grupo { Id = 1, Titulo = "Administrador" });
             context.SaveChanges();
 
+            //context.Usuarios.Add(new Usuario
+            //{
+            //    Id = 1,
+            //    Nome = "Administrador",
+            //    Login = "admin",
+            //    Senha = "admin",
+            //    IsAtivo = true,
+            //    GrupoId = 1
+            //});
+            //context.SaveChanges();
+
             base.Seed(context); 
-        }
+        }        
     }
 }

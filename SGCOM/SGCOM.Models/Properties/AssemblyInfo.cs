@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SGCOM.Domain")]
+[assembly: AssemblyTitle("SGCOM.Models")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SGCOM.Domain")]
+[assembly: AssemblyProduct("SGCOM.Models")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("62b93495-0a45-4c1e-ac28-34e4cc3072e1")]
+[assembly: Guid("599acfb4-ce8f-4b9c-88c9-b376576b2dae")]
 
 // Version information for an assembly consists of the following four values:
 //

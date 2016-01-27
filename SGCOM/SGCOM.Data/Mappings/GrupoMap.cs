@@ -1,7 +1,7 @@
-﻿using SGCOM.Domain;
+﻿using SGCOM.Models;
 using System.Data.Entity.ModelConfiguration;
 
-namespace SGCOM.Infra.Mappings
+namespace SGCOM.Data.Mappings
 {
     public class GrupoMap : EntityTypeConfiguration<Grupo>
     {
