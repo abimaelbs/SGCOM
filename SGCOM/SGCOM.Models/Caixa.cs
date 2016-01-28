@@ -18,5 +18,10 @@ namespace SGCOM.Models
         public DateTime DataFechamento { get; set; }        
         public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
