@@ -4,11 +4,11 @@ using System.Data.Entity;
 
 namespace SGCOM.Data.DataContexts
 {
-    public class SGComDataContext : DbContext
+    public class SGCOMDataContext : DbContext
     {
-        public SGComDataContext() : base("SGCOMConectionString")
+        public SGCOMDataContext() : base("SGCOMConectionString")
         {
-            Database.SetInitializer<SGComDataContext>(new SGComDataContextInitializer());
+            Database.SetInitializer<SGCOMDataContext>(new SGComDataContextInitializer());
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;
         }
@@ -27,9 +27,9 @@ namespace SGCOM.Data.DataContexts
         }
     }
 
-    public class SGComDataContextInitializer : DropCreateDatabaseIfModelChanges<SGComDataContext>
+    public class SGComDataContextInitializer : DropCreateDatabaseIfModelChanges<SGCOMDataContext>
     {
-        protected override void Seed(SGComDataContext context)
+        protected override void Seed(SGCOMDataContext context)
         {
             context.Grupos.Add(new Grupo { Id = 1, Titulo = "Administrador" });
             context.SaveChanges();

@@ -14,7 +14,7 @@ namespace SGCOM.Api.Controllers
     {
         #region Objeto Conexão
 
-        private SGComDataContext db = new SGComDataContext();
+        private SGCOMDataContext db = new SGCOMDataContext();
 
         #endregion
 

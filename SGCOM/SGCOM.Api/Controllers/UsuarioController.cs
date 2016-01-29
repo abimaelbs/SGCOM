@@ -13,7 +13,7 @@ namespace SGCOM.Api.Controllers
     [RoutePrefix("api/v1")]
     public class UsuarioController : ApiController
     {
-        private SGComDataContext db = new SGComDataContext();
+        private SGCOMDataContext db = new SGCOMDataContext();
 
         #region Filtros
 
