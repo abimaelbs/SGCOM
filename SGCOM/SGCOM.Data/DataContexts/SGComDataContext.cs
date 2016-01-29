@@ -13,15 +13,19 @@ namespace SGCOM.Data.DataContexts
             Configuration.ProxyCreationEnabled = false;
         }
 
-        #region Models
+        #region Models DbSet
+
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Caixa> Caixas { get; set; }
+
         #endregion
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new GrupoMap());
             modelBuilder.Configurations.Add(new UsuarioMap());
+            modelBuilder.Configurations.Add(new CaixaMap());
 
             base.OnModelCreating(modelBuilder);
         }
