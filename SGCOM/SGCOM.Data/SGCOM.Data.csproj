@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContexts\SGComDataContext.cs" />
+    <Compile Include="DataContexts\SGCOMDataContext.cs" />
     <Compile Include="Mappings\GrupoMap.cs" />
     <Compile Include="Mappings\UsuarioMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
