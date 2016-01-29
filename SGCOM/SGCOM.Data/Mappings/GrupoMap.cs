@@ -5,6 +5,7 @@ namespace SGCOM.Data.Mappings
 {
     public class GrupoMap : EntityTypeConfiguration<Grupo>
     {
+        // ctor = construtor
         public GrupoMap()
         {
             ToTable("Grupo");

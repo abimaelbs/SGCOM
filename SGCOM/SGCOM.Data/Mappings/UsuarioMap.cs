@@ -17,7 +17,7 @@ namespace SGCOM.Data.Mappings
 
             Property(x => x.Senha).HasMaxLength(40).IsRequired();
 
-            Property(X => X.SenhaMaster).HasMaxLength(40);
+            Property(x => x.SenhaMaster).HasMaxLength(40);
 
             Property(x=>x.IsAtivo).IsRequired();
 

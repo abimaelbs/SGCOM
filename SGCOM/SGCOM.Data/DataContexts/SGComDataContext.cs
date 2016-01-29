@@ -23,7 +23,15 @@ namespace SGCOM.Data.DataContexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            #region Tabela Grupo
+            /*Assim           
+            modelBuilder.Entity<Grupo>().ToTable("Grupo");
+            modelBuilder.Entity<Grupo>().HasKey(x => x.Id);
+            modelBuilder.Entity<Grupo>().Property(x => x.Titulo).HasMaxLength(40).IsRequired();
+            modelBuilder.Entity<Grupo>().Property(x => x.DataCadastro).IsRequired(); ou */
             modelBuilder.Configurations.Add(new GrupoMap());
+            #endregion Fim Tabela Grupo
+
             modelBuilder.Configurations.Add(new UsuarioMap());
             modelBuilder.Configurations.Add(new CaixaMap());
 

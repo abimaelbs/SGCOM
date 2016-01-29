@@ -21,7 +21,7 @@ namespace SGCOM.Models
         public virtual Grupo Grupo { get; set; }
 
         public override string ToString()
-        {            
+        {
             return this.Nome;
         }
     }

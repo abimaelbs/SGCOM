@@ -1,7 +1,6 @@
 ﻿using SGCOM.Data.DataContexts;
 using SGCOM.Models;
 using System;
-using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -32,7 +31,7 @@ namespace SGCOM.Api.Controllers
         [Route("grupos/{grupoId}")]
         public HttpResponseMessage GetGruposById(int grupoId)
         {
-            var result = db.Grupos.Where(x => x.Id == grupoId).ToList();
+            var result = db.Grupos.Where(x => x.Id == grupoId).ToList();            
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
