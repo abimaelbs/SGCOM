@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SGCOM.Models
+namespace SGCOM.Models.Entities
 {
     public class Usuario
     {
@@ -17,6 +17,7 @@ namespace SGCOM.Models
         public string SenhaMaster { get; set; }
         public bool IsAtivo { get; set; }
         public DateTime DataCadastro { get; set; }
+        public DateTime UltimoAcesso { get; set; }
         public int GrupoId { get; set; }
         public virtual Grupo Grupo { get; set; }
 

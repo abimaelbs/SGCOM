@@ -1,115 +1,114 @@
 ﻿using SGCOM.Data.DataContexts;
 using SGCOM.Models;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using System;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Description;
 
 namespace SGCOM.Api.Controllers
 {
+    [RoutePrefix("api/v1")]
     public class CaixaController : ApiController
     {
+        #region Objeto Conexão
         private SGCOMDataContext db = new SGCOMDataContext();
+        #endregion Objeto Conexão
 
-        // GET: api/Caixa
-        public IQueryable<Caixa> GetCaixas()
+        #region Filtros
+
+        [HttpGet]
+        [Route("caixas")]
+        public HttpResponseMessage GetCaixas()
         {
-            return db.Caixas;
+            var result = db.Caixas.ToList();
+            return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
-        // GET: api/Caixa/5
-        [ResponseType(typeof(Caixa))]
-        public IHttpActionResult GetCaixa(int id)
+        [HttpGet]
+        [Route("caixas/{caixaId}")]
+        public HttpResponseMessage GetCAixasById(int caixaId)
         {
-            Caixa caixa = db.Caixas.Find(id);
-            if (caixa == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(caixa);
+            var result = db.Caixas.Where(x => x.Id == caixaId).ToList();
+            return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
-        // PUT: api/Caixa/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutCaixa(int id, Caixa caixa)
+        #endregion Filtros
+
+        #region Inserir
+        [HttpPost]
+        [Route("caixas")]
+        public HttpResponseMessage PostCaixas(Caixa caixa)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != caixa.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(caixa).State = EntityState.Modified;
+            if (caixa == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
             try
             {
+                db.Caixas.Add(caixa);
                 db.SaveChanges();
+
+                var result = caixa;
+                return Request.CreateResponse(HttpStatusCode.Created, result);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception)
             {
-                if (!CaixaExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao inserir caixa.");
             }
-
-            return StatusCode(HttpStatusCode.NoContent);
         }
+        #endregion Inserir
 
-        // POST: api/Caixa
-        [ResponseType(typeof(Caixa))]
-        public IHttpActionResult PostCaixa(Caixa caixa)
+        #region Update
+        [HttpPut]
+        [Route("caixas")]
+        public HttpResponseMessage PutCaixas(Caixa caixa)
         {
-            if (!ModelState.IsValid)
+            if (caixa == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
+
+            try
             {
-                return BadRequest(ModelState);
+                db.Entry<Caixa>(caixa).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                var result = caixa;
+                return Request.CreateResponse(HttpStatusCode.OK, result);
             }
-
-            db.Caixas.Add(caixa);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = caixa.Id }, caixa);
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar caixa.");
+            }
         }
+        #endregion Update
 
-        // DELETE: api/Caixa/5
-        [ResponseType(typeof(Caixa))]
-        public IHttpActionResult DeleteCaixa(int id)
+        #region Excluir
+
+        [HttpDelete]
+        [Route("caixas/{caixaId}")]
+        public HttpResponseMessage DeleteCaixas(int caixaId)
         {
-            Caixa caixa = db.Caixas.Find(id);
-            if (caixa == null)
+            if (caixaId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
+
+            try
             {
-                return NotFound();
+                db.Caixas.Remove(db.Caixas.Find(caixaId));
+                db.SaveChanges();
+
+                return Request.CreateResponse(HttpStatusCode.OK, "Caixa excluído");
             }
-
-            db.Caixas.Remove(caixa);
-            db.SaveChanges();
-
-            return Ok(caixa);
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar caixa.");
+            }
         }
+
+        #endregion Excluir
+
+        #region Dispose
 
         protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
+        {            
             base.Dispose(disposing);
         }
 
-        private bool CaixaExists(int id)
-        {
-            return db.Caixas.Count(e => e.Id == id) > 0;
-        }
+        #endregion Dispose
     }
 }

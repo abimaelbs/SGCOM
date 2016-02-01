@@ -1,5 +1,6 @@
-﻿using SGCOM.Models;
-using SGCOM.Data.Mappings;
+﻿using SGCOM.Data.Mappings;
+using SGCOM.Models;
+using SGCOM.Models.Entities;
 using System.Data.Entity;
 
 namespace SGCOM.Data.DataContexts
@@ -46,16 +47,15 @@ namespace SGCOM.Data.DataContexts
             context.Grupos.Add(new Grupo { Id = 1, Titulo = "Administrador" });
             context.SaveChanges();
 
-            //context.Usuarios.Add(new Usuario
-            //{
-            //    Id = 1,
-            //    Nome = "Administrador",
-            //    Login = "admin",
-            //    Senha = "admin",
-            //    IsAtivo = true,
-            //    GrupoId = 1
-            //});
-            //context.SaveChanges();
+            context.Usuarios.Add(new Usuario
+            {
+                Id = 1,
+                Nome = "Administrador",
+                Login = "admin",
+                Senha = "admin",               
+                GrupoId = 1                
+            });
+            context.SaveChanges();
 
             base.Seed(context); 
         }        

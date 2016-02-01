@@ -1,4 +1,4 @@
-﻿using SGCOM.Models;
+﻿using SGCOM.Models.Entities;
 using System.Data.Entity.ModelConfiguration;
 
 namespace SGCOM.Data.Mappings
@@ -17,13 +17,13 @@ namespace SGCOM.Data.Mappings
 
             Property(x => x.Senha).HasMaxLength(40).IsRequired();
 
-            Property(x => x.SenhaMaster).HasMaxLength(40);
-
-            Property(x=>x.IsAtivo).IsRequired();
+            Property(x => x.SenhaMaster).HasMaxLength(40).IsOptional();
 
             Property(x => x.DataCadastro).IsRequired();
 
-            HasRequired(x => x.Grupo);            
+            Property(x => x.UltimoAcesso).IsRequired();
+
+            HasRequired(x => x.Grupo);
         }
     }
 }

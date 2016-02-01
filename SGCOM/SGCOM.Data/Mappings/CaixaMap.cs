@@ -17,13 +17,13 @@ namespace SGCOM.Data.Mappings
 
             Property(x =>x.ValorAbertura).IsRequired();
 
-            Property(x => x.ValorFechamento);
+            Property(x => x.ValorFechamento).IsOptional();
 
-            Property(x => x.ValorSangria);
+            Property(x => x.ValorSangria).IsOptional();
 
             Property(x => x.DataAbertura).IsRequired();
 
-            Property(x => x.DataFechamento);
+            Property(x => x.DataFechamento).IsOptional();
 
             HasRequired(x => x.Usuario);  
         }

@@ -1,19 +1,19 @@
 ﻿using SGCOM.Data.DataContexts;
-using SGCOM.Models;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using SGCOM.Models.Entities;
+using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Description;
 
 namespace SGCOM.Api.Controllers
 {
     [RoutePrefix("api/v1")]
     public class UsuarioController : ApiController
     {
+        #region Objeto Conexão
         private SGCOMDataContext db = new SGCOMDataContext();
+        #endregion Objeto Conexão
 
         #region Filtros
 
@@ -25,99 +25,94 @@ namespace SGCOM.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
-        #endregion
+        [HttpGet]        
+        [Route("usuarios/{usuarioId}")]
+        public HttpResponseMessage GetGruposById(int usuarioId)
+        {            
+            var result = db.Usuarios.Where(x => x.Id == usuarioId).ToList();
+            return Request.CreateResponse(HttpStatusCode.OK, result);
 
-        // GET: api/Usuario/5
-        [ResponseType(typeof(Usuario))]
-        public IHttpActionResult GetUsuario(int id)
-        {
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(usuario);
         }
+        #endregion Filtros
 
-        // PUT: api/Usuario/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutUsuario(int id, Usuario usuario)
+        #region Inserir
+
+        [HttpPost]
+        [Route("usuarios")]
+        public HttpResponseMessage PostUsuarios(Usuario usuario)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != usuario.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(usuario).State = EntityState.Modified;
+            if (usuario == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
             try
             {
+                db.Usuarios.Add(usuario);
                 db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsuarioExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return StatusCode(HttpStatusCode.NoContent);
+                var result = usuario;
+                return Request.CreateResponse(HttpStatusCode.Created, result);
+            }
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao inserir usuário.");
+            }
         }
 
-        // POST: api/Usuario
-        [ResponseType(typeof(Usuario))]
-        public IHttpActionResult PostUsuario(Usuario usuario)
+        #endregion Inserir
+
+        #region Update
+
+        [HttpPut]
+        [Route("usuarios")]
+        public HttpResponseMessage PutUsuarios(Usuario usuario)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
+            if (usuario == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
+
+            try
+            {                
+                db.Entry<Usuario>(usuario).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                var result = usuario;
+                return Request.CreateResponse(HttpStatusCode.OK, result);
             }
-
-            db.Usuarios.Add(usuario);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = usuario.Id }, usuario);
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar usuário.");
+            }
         }
 
-        // DELETE: api/Usuario/5
-        [ResponseType(typeof(Usuario))]
-        public IHttpActionResult DeleteUsuario(int id)
+        #endregion Update
+
+        #region Excluir
+
+        [HttpDelete]
+        [Route("usuarios/{usuarioId}")]
+        public HttpResponseMessage DeleteUsuarios(int usuarioId)
         {
-            Usuario usuario = db.Usuarios.Find(id);
-            if (usuario == null)
+            if (usuarioId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
+
+            try
             {
-                return NotFound();
+                db.Usuarios.Remove(db.Usuarios.Find(usuarioId));
+                db.SaveChanges();
+
+                return Request.CreateResponse(HttpStatusCode.OK, "Usuário excluído");
             }
-
-            db.Usuarios.Remove(usuario);
-            db.SaveChanges();
-
-            return Ok(usuario);
+            catch (Exception)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar usuário.");
+            }
         }
+
+        #endregion Excluir
+
+        #region Dispose
 
         protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
+        {         
             base.Dispose(disposing);
         }
 
-        private bool UsuarioExists(int id)
-        {
-            return db.Usuarios.Count(e => e.Id == id) > 0;
-        }
+        # endregion Dispose
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 //using System.ComponentModel.DataAnnotations;
 
-namespace SGCOM.Models
+namespace SGCOM.Models.Entities
 {
     public class Grupo
     {

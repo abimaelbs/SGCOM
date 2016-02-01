@@ -1,5 +1,5 @@
 ﻿using SGCOM.Data.DataContexts;
-using SGCOM.Models;
+using SGCOM.Models.Entities;
 using System;
 using System.Linq;
 using System.Net;
@@ -75,7 +75,7 @@ namespace SGCOM.Api.Controllers
                 db.SaveChanges();
 
                 var result = grupo;
-                return Request.CreateResponse(HttpStatusCode.OK, result);
+                return Request.CreateResponse(HttpStatusCode.BadRequest, result);
             }
             catch (Exception)
             {
@@ -96,7 +96,7 @@ namespace SGCOM.Api.Controllers
                 db.SaveChanges();
 
                 var result = grupo;
-                return Request.CreateResponse(HttpStatusCode.OK, result);
+                return Request.CreateResponse(HttpStatusCode.BadRequest, result);
             }
             catch (Exception)
             {
@@ -106,7 +106,7 @@ namespace SGCOM.Api.Controllers
 
         #endregion
 
-        #region Delatar
+        #region Excluir
         [HttpDelete]
         [Route("grupos/{grupoId}")]
         public HttpResponseMessage DeleteGrupo(int grupoId)
@@ -119,7 +119,7 @@ namespace SGCOM.Api.Controllers
                 db.Grupos.Remove(db.Grupos.Find(grupoId));
                 db.SaveChanges();
                                 
-                return Request.CreateResponse(HttpStatusCode.OK, "Produto excluído");
+                return Request.CreateResponse(HttpStatusCode.OK, "Grupo excluído");
             }
             catch (Exception)
             {
