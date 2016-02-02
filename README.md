@@ -1,2 +1,2 @@
 # SGCOM
-Sistema Gerenciador Comercial
+Sistema de Gestão Comercial
