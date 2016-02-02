@@ -18,7 +18,12 @@ namespace SGCOM.Data.DataContexts
 
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Acesso> Acessos { get; set; }
         public DbSet<Caixa> Caixas { get; set; }
+        public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<Estado> Estados  { get; set; }
+        public DbSet<Municipio> Municipios { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
 
         #endregion
 
@@ -34,7 +39,12 @@ namespace SGCOM.Data.DataContexts
             #endregion Fim Tabela Grupo
 
             modelBuilder.Configurations.Add(new UsuarioMap());
+            modelBuilder.Configurations.Add(new AcessoMap());
             modelBuilder.Configurations.Add(new CaixaMap());
+            modelBuilder.Configurations.Add(new PessoaMap());
+            modelBuilder.Configurations.Add(new EstadoMap());
+            modelBuilder.Configurations.Add(new MunicipioMap());
+            modelBuilder.Configurations.Add(new EnderecoMap());
 
             base.OnModelCreating(modelBuilder);
         }
@@ -44,17 +54,22 @@ namespace SGCOM.Data.DataContexts
     {
         protected override void Seed(SGCOMDataContext context)
         {
-            context.Grupos.Add(new Grupo { Id = 1, Titulo = "Administrador" });
-            context.SaveChanges();
+            context.Grupos.Add(new Grupo { Id = 0, Titulo = "Administrador" });
 
             context.Usuarios.Add(new Usuario
             {
-                Id = 1,
+                Id = 0,
                 Nome = "Administrador",
                 Login = "admin",
-                Senha = "admin",               
-                GrupoId = 1                
+                Senha = "admin",
+                GrupoId = 1
             });
+            context.SaveChanges();
+
+            context.Estados.Add(new Estado { Id = 0, Nome = "Mato Grosso" });           
+
+            context.Municipios.Add(new Municipio { Id = 0, Nome = "Cuiabá", EstadoId = 1 });
+
             context.SaveChanges();
 
             base.Seed(context); 

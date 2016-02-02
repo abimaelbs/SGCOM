@@ -8,6 +8,7 @@ namespace SGCOM.Models.Entities
         {
             this.IsAtivo = false;
             this.DataCadastro = DateTime.Now;
+            this.UltimoAcesso = DateTime.Now;
         }
 
         public int Id { get; set; }
