@@ -18,7 +18,10 @@ namespace SGCOM.Data.DataContexts
 
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Acesso> Acessos { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<SubMenu> SubMenus { get; set; }
+        public DbSet<Parametro> Parametros { get; set; }
+        public DbSet<Permissao> Acessos { get; set; }
         public DbSet<Caixa> Caixas { get; set; }
         public DbSet<Pessoa> Pessoas { get; set; }
         public DbSet<Estado> Estados  { get; set; }
@@ -39,7 +42,10 @@ namespace SGCOM.Data.DataContexts
             #endregion Fim Tabela Grupo
 
             modelBuilder.Configurations.Add(new UsuarioMap());
-            modelBuilder.Configurations.Add(new AcessoMap());
+            modelBuilder.Configurations.Add(new MenuMap());
+            modelBuilder.Configurations.Add(new SubMenuMap());
+            modelBuilder.Configurations.Add(new ParametroMap());
+            modelBuilder.Configurations.Add(new PermissaoMap());
             modelBuilder.Configurations.Add(new CaixaMap());
             modelBuilder.Configurations.Add(new PessoaMap());
             modelBuilder.Configurations.Add(new EstadoMap());
@@ -55,7 +61,6 @@ namespace SGCOM.Data.DataContexts
         protected override void Seed(SGCOMDataContext context)
         {
             context.Grupos.Add(new Grupo { Id = 0, Titulo = "Administrador" });
-
             context.Usuarios.Add(new Usuario
             {
                 Id = 0,
@@ -64,12 +69,8 @@ namespace SGCOM.Data.DataContexts
                 Senha = "admin",
                 GrupoId = 1
             });
-            context.SaveChanges();
-
             context.Estados.Add(new Estado { Id = 0, Nome = "Mato Grosso" });           
-
             context.Municipios.Add(new Municipio { Id = 0, Nome = "Cuiabá", EstadoId = 1 });
-
             context.SaveChanges();
 
             base.Seed(context); 

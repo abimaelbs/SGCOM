@@ -4,12 +4,7 @@ using System;
 namespace SGCOM.Models
 {
     public class Caixa
-    {
-        public Caixa()
-        {
-            this.DataAbertura = DateTime.Now;
-        }
-
+    {       
         public int Id { get; set; }
         public int NumeroCaixa { get; set; }
         public decimal ValorAbertura { get; set; }
@@ -18,6 +13,11 @@ namespace SGCOM.Models
         public DateTime DataAbertura { get; set; }
         public Nullable<DateTime> DataFechamento { get; set; }        
         public int UsuarioId { get; set; }
-        public virtual Usuario Usuario { get; set; }       
+        public virtual Usuario Usuario { get; set; }
+
+        public Caixa()
+        {
+            this.DataAbertura = DateTime.Now;
+        }
     }
 }

@@ -53,13 +53,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContexts\SGCOMDataContext.cs" />
-    <Compile Include="Mappings\AcessoMap.cs" />
+    <Compile Include="Mappings\MenuMap.cs" />
+    <Compile Include="Mappings\ParametroMap.cs" />
+    <Compile Include="Mappings\PermissaoMap.cs" />
     <Compile Include="Mappings\CaixaMap.cs" />
     <Compile Include="Mappings\EnderecoMap.cs" />
     <Compile Include="Mappings\EstadoMap.cs" />
     <Compile Include="Mappings\GrupoMap.cs" />
     <Compile Include="Mappings\MunicipioMap.cs" />
     <Compile Include="Mappings\PessoaMap.cs" />
+    <Compile Include="Mappings\SubMenuMap.cs" />
     <Compile Include="Mappings\UsuarioMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

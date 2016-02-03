@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 namespace SGCOM.Models.Entities
 {
     public class Endereco
-    {
-        public Endereco()
-        {
-            this.DataCadstro = DateTime.Now;
-        }
-
+    {       
         public int Id { get; set; }
         public int PessoaId { get; set; }
         public string Bairro { get; set; }
@@ -26,6 +21,10 @@ namespace SGCOM.Models.Entities
         public virtual Municipio Municipio { get; set; }
         public DateTime DataCadstro { get; set; }
 
+        public Endereco()
+        {
+            this.DataCadstro = DateTime.Now;
+        }
         public override string ToString()
         {
             return this.Logradouro + '|' + this.Bairro;

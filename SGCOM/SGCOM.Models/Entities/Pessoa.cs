@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 namespace SGCOM.Models.Entities
 {
     public class Pessoa
-    {
-        public Pessoa()
-        {
-            this.DataCadastro = DateTime.Now;
-        }
-
+    {       
         public int Id { get; set; }
         public string Nome { get; set; }
         public int Sexo { get; set; }
@@ -27,7 +22,11 @@ namespace SGCOM.Models.Entities
         public int QuantidadeFilhos { get; set; }        
         public DateTime DataNascimento { get; set; }        
         public DateTime DataCadastro { get; set; }
-        
+
+        public Pessoa()
+        {
+            this.DataCadastro = DateTime.Now;
+        }
         public override string ToString()
         {
             return this.Nome;

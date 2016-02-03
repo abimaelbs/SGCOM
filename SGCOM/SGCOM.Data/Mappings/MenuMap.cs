@@ -8,15 +8,17 @@ using System.Threading.Tasks;
 
 namespace SGCOM.Data.Mappings
 {
-    public class AcessoMap : EntityTypeConfiguration<Acesso>
+    public class MenuMap : EntityTypeConfiguration<Menu>
     {
-        public AcessoMap()
+        public MenuMap()
         {
-            ToTable("Acesso");
+            ToTable("Menu");
 
             HasKey(x => x.Id);
 
-            HasRequired(x => x.Grupo);
+            Property(x => x.Titulo).HasMaxLength(20).IsRequired();
+
+            Property(x => x.Ordem);
         }
     }
 }

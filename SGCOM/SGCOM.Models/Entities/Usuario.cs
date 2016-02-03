@@ -3,14 +3,7 @@
 namespace SGCOM.Models.Entities
 {
     public class Usuario
-    {
-        public Usuario()
-        {
-            this.IsAtivo = false;
-            this.DataCadastro = DateTime.Now;
-            this.UltimoAcesso = DateTime.Now;
-        }
-
+    {       
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Login { get; set; }
@@ -22,6 +15,12 @@ namespace SGCOM.Models.Entities
         public int GrupoId { get; set; }
         public virtual Grupo Grupo { get; set; }
 
+        public Usuario()
+        {
+            this.IsAtivo = false;
+            this.DataCadastro = DateTime.Now;
+            this.UltimoAcesso = DateTime.Now;
+        }
         public override string ToString()
         {
             return this.Nome;
