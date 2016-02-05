@@ -42,6 +42,9 @@
   <ItemGroup>
     <Compile Include="Entities\Caixa.cs" />
     <Compile Include="Entities\Categoria.cs" />
+    <Compile Include="Entities\Fornecedor.cs" />
+    <Compile Include="Entities\Pedido.cs" />
+    <Compile Include="Entities\PedidoItens.cs" />
     <Compile Include="Entities\Permissao.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empresa.cs" />
@@ -52,6 +55,7 @@
     <Compile Include="Entities\Municipio.cs" />
     <Compile Include="Entities\Parametro.cs" />
     <Compile Include="Entities\Pessoa.cs" />
+    <Compile Include="Entities\Produto.cs" />
     <Compile Include="Entities\SubMenu.cs" />
     <Compile Include="Entities\Unidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

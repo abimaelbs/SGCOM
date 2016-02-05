@@ -1,5 +1,5 @@
 ﻿using SGCOM.Data.DataContexts;
-using SGCOM.Models;
+using SGCOM.Models.Entities;
 using System;
 using System.Linq;
 using System.Net;

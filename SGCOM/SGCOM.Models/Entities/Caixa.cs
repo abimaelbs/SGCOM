@@ -1,7 +1,6 @@
-﻿using SGCOM.Models.Entities;
-using System;
+﻿using System;
 
-namespace SGCOM.Models
+namespace SGCOM.Models.Entities
 {
     public class Caixa
     {       
