@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SGCOM.WebApplication.Controllers
+namespace SGCOM.Net.Controllers
 {
     public class HomeController : Controller
     {
