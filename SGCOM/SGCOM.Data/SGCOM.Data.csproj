@@ -53,8 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContexts\SGCOMDataContext.cs" />
+    <Compile Include="Mappings\CategoriaMap.cs" />
+    <Compile Include="Mappings\ClienteMap.cs" />
+    <Compile Include="Mappings\EmpresaMap.cs" />
+    <Compile Include="Mappings\FornecedorMap.cs" />
     <Compile Include="Mappings\MenuMap.cs" />
     <Compile Include="Mappings\ParametroMap.cs" />
+    <Compile Include="Mappings\PedidoItensMap.cs" />
+    <Compile Include="Mappings\PedidoMap.cs" />
     <Compile Include="Mappings\PermissaoMap.cs" />
     <Compile Include="Mappings\CaixaMap.cs" />
     <Compile Include="Mappings\EnderecoMap.cs" />
@@ -62,7 +68,9 @@
     <Compile Include="Mappings\GrupoMap.cs" />
     <Compile Include="Mappings\MunicipioMap.cs" />
     <Compile Include="Mappings\PessoaMap.cs" />
+    <Compile Include="Mappings\ProdutoMap.cs" />
     <Compile Include="Mappings\SubMenuMap.cs" />
+    <Compile Include="Mappings\UnidadeMap.cs" />
     <Compile Include="Mappings\UsuarioMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,5 +1,4 @@
-﻿using SGCOM.Models;
-using SGCOM.Models.Entities;
+﻿using SGCOM.Models.Entities;
 using System.Data.Entity.ModelConfiguration;
 
 namespace SGCOM.Data.Mappings

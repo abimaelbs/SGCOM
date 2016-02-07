@@ -3,16 +3,15 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SGCOM.Data.Mappings
 {
-    public class GrupoMap : EntityTypeConfiguration<Grupo>
+    public class FornecedorMap : EntityTypeConfiguration<Fornecedor>
     {
-        // ctor = construtor
-        public GrupoMap()
+        public FornecedorMap()
         {
-            ToTable("Grupo");
+            ToTable("Fornecedor");
 
             HasKey(x => x.Id);
 
-            Property(x => x.Titulo).HasMaxLength(40).IsRequired();
+            Property(x => x.RazaoSocial).HasMaxLength(80).IsRequired();
 
             Property(x => x.DataCadastro).IsRequired();
         }
