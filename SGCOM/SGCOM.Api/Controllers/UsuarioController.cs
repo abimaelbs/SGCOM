@@ -22,15 +22,19 @@ namespace SGCOM.Api.Controllers
         public HttpResponseMessage GetUsuarios()
         {
             var result = db.Usuarios.ToList();
-            return Request.CreateResponse(HttpStatusCode.OK, result);
+            if(result.Count > 0)
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateResponse(HttpStatusCode.NotFound, result);
         }
 
         [HttpGet]        
         [Route("usuarios/{usuarioId}")]
-        public HttpResponseMessage GetGruposById(int usuarioId)
+        public HttpResponseMessage GetUsuarioById(int usuarioId)
         {            
             var result = db.Usuarios.Where(x => x.Id == usuarioId).ToList();
-            return Request.CreateResponse(HttpStatusCode.OK, result);
+            if (result.Count > 0)
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateResponse(HttpStatusCode.NotFound, result);
 
         }
         #endregion Filtros

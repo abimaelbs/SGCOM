@@ -20,7 +20,7 @@ namespace SGCOM.Data.DataContexts
         public DbSet<Menu> Menus { get; set; }
         public DbSet<SubMenu> SubMenus { get; set; }
         public DbSet<Parametro> Parametros { get; set; }
-        public DbSet<Permissao> Acessos { get; set; }
+        public DbSet<Permissao> Permissoes { get; set; }
         public DbSet<Caixa> Caixas { get; set; }
         public DbSet<Pessoa> Pessoas { get; set; }
         public DbSet<Estado> Estados  { get; set; }

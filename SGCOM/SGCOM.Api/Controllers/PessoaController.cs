@@ -1,7 +1,6 @@
 ﻿using SGCOM.Data.DataContexts;
 using SGCOM.Models.Entities;
 using System;
-using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,7 +9,7 @@ using System.Web.Http;
 namespace SGCOM.Api.Controllers
 {
     [RoutePrefix("api/public")]
-    public class EstadoController : ApiController
+    public class PessoaController : ApiController
     {
         #region Objeto Conexão
         private SGCOMDataContext db = new SGCOMDataContext();
@@ -19,18 +18,18 @@ namespace SGCOM.Api.Controllers
         #region Filtros
 
         [HttpGet]
-        [Route("estados")]
-        public HttpResponseMessage GetEstados()
+        [Route("pessoas")]
+        public HttpResponseMessage GetPessoas()
         {
-            var result = db.Estados.ToList();
+            var result = db.Pessoas.ToList();
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
         [HttpGet]
-        [Route("estados/{estadoId}")]
-        public HttpResponseMessage GetEstadosById(int estadoId)
+        [Route("pessoas/{pessoaId}")]
+        public HttpResponseMessage GetPessoaById(int pessoaId)
         {
-            var result = db.Estados.Where(x => x.Id == estadoId).ToList();
+            var result = db.Pessoas.Where(x => x.Id == pessoaId).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
         #endregion Filtros
@@ -38,22 +37,22 @@ namespace SGCOM.Api.Controllers
         #region Inserir
 
         [HttpPost]
-        [Route("estados")]
-        public HttpResponseMessage PostEstados(Estado estado)
+        [Route("pessoas")]
+        public HttpResponseMessage PostPessoas(Pessoa pessoa)
         {
-            if (estado == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
+            if (pessoa == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
             try
             {
-                db.Estados.Add(estado);
+                db.Pessoas.Add(pessoa);
                 db.SaveChanges();
 
-                var result = estado;
+                var result = pessoa;
                 return Request.CreateResponse(HttpStatusCode.Created, result);
             }
             catch (Exception)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao inserir Estado.");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao inserir Pessoa.");
             }
         }
 
@@ -62,22 +61,22 @@ namespace SGCOM.Api.Controllers
         #region Update
 
         [HttpPut]
-        [Route("estados")]
-        public HttpResponseMessage PutEstados(Estado estado)
+        [Route("pessoas")]
+        public HttpResponseMessage PutPessoas(Pessoa pessoa)
         {
-            if (estado == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
+            if (pessoa == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
             try
             {
-                db.Entry<Estado>(estado).State = System.Data.Entity.EntityState.Modified;
+                db.Entry<Pessoa>(pessoa).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
-                var result = estado;
+                var result = pessoa;
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
             catch (Exception)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar Estado.");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar Pessoa.");
             }
         }
 
@@ -86,21 +85,21 @@ namespace SGCOM.Api.Controllers
         #region Excluir
 
         [HttpDelete]
-        [Route("estados/{estadoId}")]
-        public HttpResponseMessage DeleteEstados(int estadoId)
+        [Route("pessoas/{pessoaId}")]
+        public HttpResponseMessage DeletePessoas(int pessoaId)
         {
-            if (estadoId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
+            if (pessoaId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
             try
             {
-                db.Estados.Remove(db.Estados.Find(estadoId));
+                db.Pessoas.Remove(db.Pessoas.Find(pessoaId));
                 db.SaveChanges();
 
-                return Request.CreateResponse(HttpStatusCode.OK, "Estado excluído");
+                return Request.CreateResponse(HttpStatusCode.OK, "Pessoa excluída");
             }
             catch (Exception)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar Estado.");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao excluir Pessoa.");
             }
         }
 
