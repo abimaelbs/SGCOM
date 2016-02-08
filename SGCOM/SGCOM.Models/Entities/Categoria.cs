@@ -6,12 +6,12 @@ namespace SGCOM.Models.Entities
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public byte Imagem { get; set; }
+        public Nullable<byte> Imagem { get; set; }
         public DateTime DataCadastro { get; set; }
 
         public Categoria()
         {
-            this.DataCadastro = DateTime.Now;
+            this.DataCadastro = DateTime.Now;            
         }
         public override string ToString()
         {

@@ -170,6 +170,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CaixaController.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
+    <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
     <Compile Include="Controllers\MenuController.cs" />

@@ -13,7 +13,7 @@ namespace SGCOM.Data.Mappings
 
             Property(x => x.Nome).HasMaxLength(20).IsRequired();
 
-            Property(x => x.Imagem);
+            Property(x => x.Imagem).IsOptional();
 
             Property(x => x.DataCadastro).IsRequired();
         }
