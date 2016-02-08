@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace SGCOM.Api.Controllers
 {
-    [RoutePrefix("api/v1")]
+    [RoutePrefix("api/public")]
     public class MenuController : ApiController
     {
         #region Objeto Conexão

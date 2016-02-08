@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace SGCOM.Api.Controllers
 {
-    [RoutePrefix("api/v1")]
+    [RoutePrefix("api/public")]
     public class UsuarioController : ApiController
     {
         #region Objeto Conexão

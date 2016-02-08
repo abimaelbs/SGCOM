@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContexts\SGCOMDataContext.cs" />
+    <Compile Include="DataContexts\SGComDataContext.cs" />
     <Compile Include="Mappings\CategoriaMap.cs" />
     <Compile Include="Mappings\ClienteMap.cs" />
     <Compile Include="Mappings\EmpresaMap.cs" />
@@ -83,6 +83,9 @@
       <Project>{599acfb4-ce8f-4b9c-88c9-b376576b2dae}</Project>
       <Name>SGCOM.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mappings\DataContexts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

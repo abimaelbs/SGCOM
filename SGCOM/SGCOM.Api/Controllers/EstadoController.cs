@@ -13,7 +13,7 @@ using SGCOM.Models.Entities;
 
 namespace SGCOM.Api.Controllers
 {
-    [RoutePrefix("api/v1")]
+    [RoutePrefix("api/public")]
     public class EstadoController : ApiController
     {
         #region Objeto Conexão
