@@ -45,7 +45,6 @@
   <ItemGroup>
     <Folder Include="JavaScript\angular\i18n\ngLocale\" />
     <Folder Include="Shared\" />
-    <Folder Include="StyleSheet\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="html\Index.html" />
@@ -2460,6 +2459,14 @@
     <Content Include="JavaScript\angular\i18n\angular-locale_zu-za.js" />
     <Content Include="JavaScript\angular\i18n\angular-locale_zu.js" />
     <Content Include="JavaScript\angular\version.txt" />
+    <Content Include="StyleSheet\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="StyleSheet\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="StyleSheet\bootstrap\css\bootstrap.css" />
+    <Content Include="StyleSheet\bootstrap\css\bootstrap.min.css" />
+    <Content Include="StyleSheet\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="StyleSheet\bootstrap\js\bootstrap.js" />
+    <Content Include="StyleSheet\bootstrap\js\bootstrap.min.js" />
+    <Content Include="StyleSheet\bootstrap\js\npm.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="JavaScript\angular\angular-animate.min.js.map" />
@@ -2697,6 +2704,14 @@
     <None Include="JavaScript\angular\docs\js\search-worker.min.js.map" />
     <None Include="JavaScript\angular\errors.json" />
     <None Include="JavaScript\angular\version.json" />
+    <None Include="StyleSheet\bootstrap\css\bootstrap-theme.css.map" />
+    <None Include="StyleSheet\bootstrap\css\bootstrap-theme.min.css.map" />
+    <None Include="StyleSheet\bootstrap\css\bootstrap.css.map" />
+    <None Include="StyleSheet\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="StyleSheet\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="StyleSheet\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="StyleSheet\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="StyleSheet\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
