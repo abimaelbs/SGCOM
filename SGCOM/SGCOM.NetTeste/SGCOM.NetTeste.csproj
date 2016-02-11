@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,10 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="JavaScript\angular\i18n\ngLocale\" />
-    <Folder Include="Shared\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="html\Index.html" />
+    <Content Include="Home\Index.html" />
     <Content Include="JavaScript\angular\angular-animate.js" />
     <Content Include="JavaScript\angular\angular-animate.min.js" />
     <Content Include="JavaScript\angular\angular-aria.js" />
@@ -2459,6 +2459,7 @@
     <Content Include="JavaScript\angular\i18n\angular-locale_zu-za.js" />
     <Content Include="JavaScript\angular\i18n\angular-locale_zu.js" />
     <Content Include="JavaScript\angular\version.txt" />
+    <Content Include="Shared\_Layout.html" />
     <Content Include="StyleSheet\bootstrap\css\bootstrap-theme.css" />
     <Content Include="StyleSheet\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="StyleSheet\bootstrap\css\bootstrap.css" />
