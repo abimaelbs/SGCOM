@@ -47,6 +47,7 @@
     <Folder Include="JavaScript\angular\i18n\ngLocale\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Home\footer.html" />
     <Content Include="Home\Index.html" />
     <Content Include="JavaScript\angular\angular-animate.js" />
     <Content Include="JavaScript\angular\angular-animate.min.js" />
