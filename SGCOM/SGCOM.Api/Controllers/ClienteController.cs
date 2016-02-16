@@ -8,7 +8,8 @@ using System.Web.Http;
 
 namespace SGCOM.Api.Controllers
 {
-    [RoutePrefix("api/public")]
+    [MyCorsPolicy]
+    [RoutePrefix("api/public")]    
     public class ClienteController : ApiController
     {
         #region Objeto Conexão

@@ -37,10 +37,11 @@
      
     <script type="text/javascript">
 		angular.module("listaTelefonica", ["ngMessages"]);
-		angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter) {
+		angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, $http) {
 		    $scope.app = "Lista Telefonica";
+		    $scope.clientes = [];
 		    $scope.contatos = [
-				{ nome: uppercaseFilter("Pedro"), data: new Date(), telefone: "9999988", cor: "blue" },
+				{ nome: "Pedro", data: new Date(), telefone: "9999988", cor: "blue" },
 				{ nome: "Ana", data: new Date(), telefone: "12153", cor: "yellow" },
 				{ nome: "Maria", data: new Date(), telefone: "78894532", cor: "red" }
 			];
@@ -51,6 +52,14 @@
                 { nome: "GVT", codigo: 25, categoria: "Fixo", preco: 1 },
 			    { nome: "Embratel", codigo: 21, categoria: "Fixo", preco: 2 }
 			];
+
+			var carregarContatos = function () {
+			    $http.get("http://localhost:52055/api/public/clientes").success(function (data) {
+			        $scope.clientes = data;
+			    }).error(function(data,sstatus){
+			        $scope.message = "Erro na retornoar clinetes: " + data;
+			    });
+			};
 			$scope.adicionarContato = function(contato) {
 				$scope.contatos.push(angular.copy(contato));
 			    console.log(contato);
@@ -71,12 +80,15 @@
 			    $scope.criterioOrdenacao = campo;
 			    $scope.direcaoOrdenacao = !$scope.direcaoOrdenacao;
 			}
+
+			carregarContatos();
 		});
     </script>
 </head>
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
         <h3 ng-bind="app"></h3>  
+        {{clientes}}
         <input class="form-control" type="text" ng-model="criterioBusca" placeholder="O que você esta buscando?"/>          
         <table ng-show="contatos.length>0" class="table">
             <tr>
@@ -91,7 +103,7 @@
                 <td><input type="checkbox"ng-model="contato.selecionado"/></td>
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
-                <td>{{contato.operadora}}</td>
+                <td>{{contato.operadora.nome}}</td>
                 <td>{{contato.data | date:'dd/MM/yyyy HH:mm'}}</td>
                 <td><div style="width:20px; height:20px;" ng-style="{'background-color':contato.cor}"></div> </td>
             </tr>
@@ -100,7 +112,7 @@
         <form name="contatoForm">
             <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10" />
             <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" />
-            <select class="form-control" ng-model="contato.nome" ng-options="operadora.nome +' ( '+ (operadora.preco | currency)+' )' for operadora in operadoras | orderBy:'nome'">
+            <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome +' ( '+ (operadora.preco | currency)+' )' for operadora in operadoras | orderBy:'nome'">
                 <option value="">Selecione uma operadora</option>
             </select>
         </form>
