@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace SGCOM.Api.Controllers
 {
+    [MyCorsPolicy]
     [RoutePrefix("api/public")]
     public class UnidadeController : ApiController
     {

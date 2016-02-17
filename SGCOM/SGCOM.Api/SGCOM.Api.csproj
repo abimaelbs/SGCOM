@@ -177,6 +177,7 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="Controllers\CorsPolicyFactory.cs" />
+    <Compile Include="Controllers\ListaTelefonicaController.cs" />
     <Compile Include="Controllers\MyCorsPolicyAttribute.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CaixaController.cs" />

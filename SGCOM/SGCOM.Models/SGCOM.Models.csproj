@@ -43,6 +43,7 @@
     <Compile Include="Entities\Caixa.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Fornecedor.cs" />
+    <Compile Include="Entities\ListaTelefonica.cs" />
     <Compile Include="Entities\Pedido.cs" />
     <Compile Include="Entities\PedidoItens.cs" />
     <Compile Include="Entities\Permissao.cs" />

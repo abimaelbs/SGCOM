@@ -57,6 +57,7 @@
     <Compile Include="Mappings\ClienteMap.cs" />
     <Compile Include="Mappings\EmpresaMap.cs" />
     <Compile Include="Mappings\FornecedorMap.cs" />
+    <Compile Include="Mappings\ListaTelefonicaMap.cs" />
     <Compile Include="Mappings\MenuMap.cs" />
     <Compile Include="Mappings\ParametroMap.cs" />
     <Compile Include="Mappings\PedidoItensMap.cs" />

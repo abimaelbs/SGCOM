@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Serialization;
 using SGCOM.Api.Controllers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SGCOM.Api
 {
@@ -18,8 +19,9 @@ namespace SGCOM.Api
             settings.Formatting = Newtonsoft.Json.Formatting.Indented;
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
-            config.SetCorsPolicyProviderFactory(new CorsPolicyFactory());
+            config.SetCorsPolicyProviderFactory(new CorsPolicyFactory());          
             config.EnableCors();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 

@@ -39,12 +39,7 @@
 		angular.module("listaTelefonica", ["ngMessages"]);
 		angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, $http) {
 		    $scope.app = "Lista Telefonica";
-		    $scope.clientes = [];
-		    $scope.contatos = [
-				{ nome: "Pedro", data: new Date(), telefone: "9999988", cor: "blue" },
-				{ nome: "Ana", data: new Date(), telefone: "12153", cor: "yellow" },
-				{ nome: "Maria", data: new Date(), telefone: "78894532", cor: "red" }
-			];
+		    $scope.contatos = [];		   
 			$scope.operadoras = [
                 { nome: "OI", codigo: 14, categoria:"Celular", preco:2 },
                 { nome: "Vivo", codigo: 15,categoria:"Celular", preco:1 },
@@ -54,21 +49,28 @@
 			];
 
 			var carregarContatos = function () {
-			    $http.get("http://localhost:52055/api/public/clientes").success(function (data) {
-			        $scope.clientes = data;
+			    $http.get("http://localhost:52055/api/public/listaTelefonicas").success(function (data) {
+			        $scope.contatos = data;
 			    }).error(function(data,sstatus){
-			        $scope.message = "Erro na retornoar clinetes: " + data;
+			        $scope.message = "Erro ao retornoar clientes: " + data;
 			    });
 			};
 			$scope.adicionarContato = function(contato) {
-				$scope.contatos.push(angular.copy(contato));
-			    console.log(contato);
-			    delete $scope.contato;
-			    $scope.contatoForm.$setPristine();
+			    $http.post("http://localhost:52055/api/public/listaTelefonicas", contato).success(function (data) {
+			        delete $scope.contato;
+			        $scope.contatoForm.$setPristine();
+			        carregarContatos();
+			    });			   
 			};
 			$scope.apagarContatos = function(contatos) {
 			    $scope.contatos = this.contatos.filter(function (contato) {
-			        if (!contato.selecionado) return contato;
+			        //if (!contato.selecionado) return contato;
+			        if (!contato.selecionado)
+			        {
+			            $http.post("http://localhost:52055/api/public/listaTelefonicas", 6).success(function (data) {
+			                carregarContatos();
+			            });
+			        }
 			    });			    
 			};
 			$scope.isContatoSelecionado = function (contatos) {
@@ -87,8 +89,7 @@
 </head>
 <body ng-controller="listaTelefonicaCtrl">
     <div class="jumbotron">
-        <h3 ng-bind="app"></h3>  
-        {{clientes}}
+        <h3 ng-bind="app"></h3>        
         <input class="form-control" type="text" ng-model="criterioBusca" placeholder="O que você esta buscando?"/>          
         <table ng-show="contatos.length>0" class="table">
             <tr>

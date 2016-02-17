@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace SGCOM.Api.Controllers
 {
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     [MyCorsPolicy]
     [RoutePrefix("api/public")]    
     public class ClienteController : ApiController
