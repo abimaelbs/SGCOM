@@ -341,10 +341,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Index.html" />
-    <Content Include="JavaScript\app.js" />
-    <Content Include="JavaScript\Controlers\listaTelefonicaCtrl.js" />
-    <Content Include="JavaScript\Services\contatosAPIService.js" />
+    <Content Include="Default.html" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\Controlers\listaTelefonicaCtrl.js" />
+    <Content Include="Scripts\Services\contatosAPIService.js" />
     <Content Include="Lib\angular\angular-animate.js" />
     <Content Include="Lib\angular\angular-animate.min.js" />
     <Content Include="Lib\angular\angular-aria.js" />
@@ -2768,7 +2768,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lib\angular\i18n\ngLocale\" />
-    <Folder Include="View\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
