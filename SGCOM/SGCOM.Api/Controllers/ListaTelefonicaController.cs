@@ -18,6 +18,13 @@ namespace SGCOM.Api.Controllers
         #endregion Objeto Conexão
 
         #region Filtros
+        [HttpGet]
+        [Route("contatos")]
+        public HttpResponseMessage GetContatos()
+        {
+            var result = db.ListaTelefonica.ToList();
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
 
         [HttpGet]
         [Route("listaTelefonicas")]
@@ -39,22 +46,22 @@ namespace SGCOM.Api.Controllers
 
         #region Inserir
         [HttpPost]
-        [Route("listaTelefonicas")]
-        public HttpResponseMessage PostListaTelefonicas(ListaTelefonica listaTelefonica)
+        [Route("contatos")]
+        public HttpResponseMessage PostContato(ListaTelefonica contato)
         {
-            if (listaTelefonica == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
+            if (contato == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
             try
             {
-                db.ListaTelefonica.Add(listaTelefonica);
+                db.ListaTelefonica.Add(contato);
                 db.SaveChanges();
 
-                var result = listaTelefonica;
+                var result = contato;
                 return Request.CreateResponse(HttpStatusCode.Created, result);
             }
             catch (Exception)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao inserir listaTelefonica.");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao inserir contato.");
             }
         }
         #endregion Inserir
@@ -84,9 +91,9 @@ namespace SGCOM.Api.Controllers
         #region Excluir
 
         [HttpDelete]
-        [Route("listaTelefonicas/{listaTelefonicaId}")]
+        [Route("listaTelefonicas/{listaTelefonicaId}")]        
         public HttpResponseMessage DeleteListaTelefonicas(int listaTelefonicaId)
-        {
+        {            
             if (listaTelefonicaId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
             try

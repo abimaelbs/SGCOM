@@ -333,6 +333,7 @@
     <Content Include="Lib\angular\docs\js\search-worker.min.js.map" />
     <Content Include="Lib\angular\errors.json" />
     <Content Include="Lib\angular\version.json" />
+    <None Include="Properties\PublishProfiles\SGCOM.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -344,6 +345,9 @@
     <Content Include="Default.html" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\Controlers\listaTelefonicaCtrl.js" />
+    <Content Include="Scripts\Directives\uiAlertDirective.js" />
+    <Content Include="Scripts\Filters\nameFilter.js" />
+    <Content Include="Scripts\Value\configValue.js" />
     <Content Include="Scripts\Services\contatosAPIService.js" />
     <Content Include="Lib\angular\angular-animate.js" />
     <Content Include="Lib\angular\angular-animate.min.js" />
@@ -2758,9 +2762,11 @@
     <Content Include="Lib\angular\version.txt" />
     <Content Include="Lib\bootstrap\bootstrap.css" />
     <Content Include="Lib\bootstrap\bootstrap.js" />
+    <Content Include="Shared\_Alert.html" />
     <Content Include="Shared\_Footer.html" />
     <Content Include="Shared\_Layout.html" />
     <Content Include="StyleSheet\app.css" />
+    <Content Include="StyleSheet\ui.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

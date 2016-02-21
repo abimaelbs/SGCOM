@@ -1,4 +1,4 @@
-﻿angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, $http) {
+﻿angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI) {
     $scope.app = "Lista Telefonica";
     $scope.contatos = [];
     $scope.operadoras = [
@@ -10,14 +10,14 @@
     ];
 
     var carregarContatos = function () {
-        $http.get("http://localhost:52055/api/public/listaTelefonicas").success(function (data) {
+        contatosAPI.getContatos().success(function (data) {
             $scope.contatos = data;
-        }).error(function (data, sstatus) {
-            $scope.message = "Erro ao retornoar clientes: " + data;
+        }).error(function (data, status) {
+            $scope.message = "Erro ao retornar contatos: " + data;
         });
     };
     $scope.adicionarContato = function (contato) {
-        $http.post("http://localhost:52055/api/public/listaTelefonicas", contato).success(function (data) {
+        contatosAPI.saveContato(contato).success(function (data) {
             delete $scope.contato;
             $scope.contatoForm.$setPristine();
             carregarContatos();
@@ -27,9 +27,9 @@
         $scope.contatos = this.contatos.filter(function (contato) {
             //if (!contato.selecionado) return contato;
             if (!contato.selecionado) {
-                $http.post("http://localhost:52055/api/public/listaTelefonicas", 6).success(function (data) {
-                    carregarContatos();
-                });
+                //$http.post("http://localhost:52055/api/public/listaTelefonicas", 6).success(function (data) {
+                   // carregarContatos();
+                //});
             }
         });
     };
