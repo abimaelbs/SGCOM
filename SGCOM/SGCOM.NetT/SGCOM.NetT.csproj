@@ -345,6 +345,7 @@
     <Content Include="Default.html" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\Controlers\listaTelefonicaCtrl.js" />
+    <Content Include="Scripts\Directives\uiDateDirective.js" />
     <Content Include="Scripts\Directives\uiAlertDirective.js" />
     <Content Include="Scripts\Filters\nameFilter.js" />
     <Content Include="Scripts\Value\configValue.js" />
