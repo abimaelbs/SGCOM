@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Lib\ui\ui.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -344,7 +345,9 @@
   <ItemGroup>
     <Content Include="Default.html" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\config\routeConfig.js" />
     <Content Include="Scripts\Controlers\listaTelefonicaCtrl.js" />
+    <Content Include="Scripts\Controlers\novoContatoCtrl.js" />
     <Content Include="Scripts\Directives\uiDateDirective.js" />
     <Content Include="Scripts\Directives\uiAlertDirective.js" />
     <Content Include="Scripts\Filters\nameFilter.js" />
@@ -2768,6 +2771,8 @@
     <Content Include="Shared\_Layout.html" />
     <Content Include="StyleSheet\app.css" />
     <Content Include="StyleSheet\ui.css" />
+    <Content Include="Views\contatos.html" />
+    <Content Include="Views\novoContato.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2775,7 +2780,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lib\angular\i18n\ngLocale\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
