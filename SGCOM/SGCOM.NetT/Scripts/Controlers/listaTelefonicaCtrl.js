@@ -1,6 +1,6 @@
-﻿angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatosAPI) {
+﻿angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos) {
     $scope.app = "Lista Telefonica";
-    $scope.contatos = [];
+    $scope.contatos = contatos.data;
     $scope.operadoras = [
         { nome: "OI", codigo: 14, categoria: "Celular", preco: 2 },
         { nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1 },
@@ -8,14 +8,7 @@
         { nome: "GVT", codigo: 25, categoria: "Fixo", preco: 1 },
         { nome: "Embratel", codigo: 21, categoria: "Fixo", preco: 2 }
     ];
-
-    var carregarContatos = function () {
-        contatosAPI.getContatos().success(function (data) {
-            $scope.contatos = data;
-        }).error(function (data, status) {
-            $scope.message = "Erro ao retornar contatos: " + data;
-        });
-    };
+   
     $scope.adicionarContato = function (contato) {
         contatosAPI.saveContato(contato).success(function (data) {
             delete $scope.contato;
@@ -41,7 +34,5 @@
     $scope.ordenarPor = function (campo) {
         $scope.criterioOrdenacao = campo;
         $scope.direcaoOrdenacao = !$scope.direcaoOrdenacao;
-    }
-
-    carregarContatos();
+    }    
 });

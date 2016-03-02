@@ -346,6 +346,7 @@
     <Content Include="Default.html" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\config\routeConfig.js" />
+    <Content Include="Scripts\Controlers\detalhesContatoCtrl.js" />
     <Content Include="Scripts\Controlers\listaTelefonicaCtrl.js" />
     <Content Include="Scripts\Controlers\novoContatoCtrl.js" />
     <Content Include="Scripts\Directives\uiDateDirective.js" />
@@ -2772,6 +2773,7 @@
     <Content Include="StyleSheet\app.css" />
     <Content Include="StyleSheet\ui.css" />
     <Content Include="Views\contatos.html" />
+    <Content Include="Views\detalhesContato.html" />
     <Content Include="Views\novoContato.html" />
     <Content Include="Web.config" />
   </ItemGroup>

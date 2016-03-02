@@ -1,6 +1,6 @@
-﻿angular.module("listaTelefonica").controller("novoContratoCtrl", function ($scope, contatosAPI,$location) {   
-    $scope.contatos = [];
-    $scope.operadoras = [
+﻿angular.module("listaTelefonica").controller("novoContratoCtrl", function ($scope, contatosAPI, $location) {          
+    $scope.operadoras =         
+        [
         { nome: "OI", codigo: 14, categoria: "Celular", preco: 2 },
         { nome: "Vivo", codigo: 15, categoria: "Celular", preco: 1 },
         { nome: "Tim", codigo: 41, categoria: "Celula", preco: 3 },

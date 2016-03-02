@@ -34,11 +34,12 @@ namespace SGCOM.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
+        [MyCorsPolicy]
         [HttpGet]
-        [Route("listaTelefonicas/{listaTelefonicaId}")]
-        public HttpResponseMessage GetListaTelefonicasById(int listaTelefonicaId)
+        [Route("contatos/{id}")]
+        public HttpResponseMessage GetListaTelefonicasById(int id)
         {
-            var result = db.ListaTelefonica.Where(x=>x.Id== listaTelefonicaId).ToList();
+            var result = db.ListaTelefonica.Where(x=>x.Id== id).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 

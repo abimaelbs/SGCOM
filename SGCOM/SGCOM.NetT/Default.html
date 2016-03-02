@@ -1,24 +1,33 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="listaTelefonica">
-<head>
-    <title>Lista Telefonica</title>
+<head>    
     <meta charset="utf-8" />
     <title>Lista Telefonica</title>
-    <link rel="stylesheet" type="text/css" href="Lib/bootstrap/bootstrap.css">
-    <link href="stylesheet/app.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="StyleSheet/ui.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Lib/bootstrap/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="stylesheet/app.css" type="text/css"/>
+    <link rel="stylesheet" href="StyleSheet/ui.css" type="text/css"/>
+
+    <!-- JS -->
     <script src="Lib/angular/angular.min.js" type="text/javascript"></script>
     <script src="Lib/angular/angular-messages.js" type="text/javascript"></script>
     <script src="Lib/angular/i18n/angular-locale_pt-br.js"></script>
     <script src="Lib/angular/angular-route.min.js"></script>
     <script src="Lib/ui/ui.js"></script>
     <script src="Scripts/app.js"></script> 
-    <script src="Scripts/controlers/listatelefonicactrl.js"></script>  
+
+    <script src="Scripts/controlers/listaTelefonicaCtrl.js"></script>  
     <script src="Scripts/controlers/novoContatoCtrl.js"></script>  
+    <script src="Scripts/controlers/detalhesContatoCtrl.js"></script>  
+
     <script src="Scripts/Services/contatosAPIService.js"></script> 
+
     <script src="Scripts/config/routeConfig.js"></script> 
+
     <script src="Scripts/Filters/nameFilter.js"></script>
     <script src="Scripts/Value/configValue.js"></script>
+
     <script src="Scripts/Directives/uiAlertDirective.js"></script>
     <script src="Scripts/Directives/uiDateDirective.js"></script>
 </head>
