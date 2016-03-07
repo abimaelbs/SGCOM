@@ -68,8 +68,9 @@ namespace SGCOM.Api.Controllers
         #endregion Inserir
 
         #region Update
+        [MyCorsPolicy]
         [HttpPut]
-        [Route("listaTelefonicas")]
+        [Route("contatos")]
         public HttpResponseMessage PutListaTelefonicas(ListaTelefonica listaTelefonica)
         {
             if (listaTelefonica == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
@@ -91,15 +92,16 @@ namespace SGCOM.Api.Controllers
 
         #region Excluir
 
+        [MyCorsPolicy]
         [HttpDelete]
-        [Route("listaTelefonicas/{listaTelefonicaId}")]        
-        public HttpResponseMessage DeleteListaTelefonicas(int listaTelefonicaId)
+        [Route("contatos/{id}")]        
+        public HttpResponseMessage DeleteListaTelefonicas(int id)
         {            
-            if (listaTelefonicaId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
+            if (id < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
             try
             {
-                db.ListaTelefonica.Remove(db.ListaTelefonica.Find(listaTelefonicaId));
+                db.ListaTelefonica.Remove(db.ListaTelefonica.Find(id));
                 db.SaveChanges();
 
                 return Request.CreateResponse(HttpStatusCode.OK, "ListaTelefonica excluído");

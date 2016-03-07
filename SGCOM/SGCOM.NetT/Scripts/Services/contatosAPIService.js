@@ -27,7 +27,11 @@ angular.module("listaTelefonica").service("contatosAPI", function ($http, config
         return $http.post(config.baseUrl + "/contatos", contato);
     };
 
+    this.updateContato = function (contato) {
+        return $http.put(config.baseUrl + "/contatos", contato);
+    };
+
     this.removeContato = function (contato) {
-        return $http.post(config.baseUrl + "/contatos", contato);
+        return $http.delete(config.baseUrl + "/contatos/" + contato.id);
     };
 })

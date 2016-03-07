@@ -1,4 +1,4 @@
-﻿angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos) {
+﻿angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, contatosAPI) {
     $scope.app = "Lista Telefonica";
     $scope.contatos = contatos.data;
     $scope.operadoras = [
@@ -8,7 +8,7 @@
         { nome: "GVT", codigo: 25, categoria: "Fixo", preco: 1 },
         { nome: "Embratel", codigo: 21, categoria: "Fixo", preco: 2 }
     ];
-   
+   /*
     $scope.adicionarContato = function (contato) {
         contatosAPI.saveContato(contato).success(function (data) {
             delete $scope.contato;
@@ -16,13 +16,14 @@
             carregarContatos();
         });
     };
+    */
     $scope.apagarContatos = function (contatos) {
         $scope.contatos = this.contatos.filter(function (contato) {
-            //if (!contato.selecionado) return contato;
-            if (!contato.selecionado) {
-                //$http.post("http://localhost:52055/api/public/listaTelefonicas", 6).success(function (data) {
-                   // carregarContatos();
-                //});
+            if (!contato.selecionado) return contato;
+            if (contato.selecionado) {                
+                contatosAPI.removeContato(contato).success(function (data) {
+                    carregarContatos();
+                });              
             }
         });
     };

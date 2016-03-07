@@ -1,6 +1,6 @@
 ﻿angular.module("listaTelefonica").config(function ($routeProvider) {
     $routeProvider.when("/contatos", {
-        templateUrl: "views/contatos.html",
+        templateUrl: "views/Contatos/contatos.html",
         controller: "listaTelefonicaCtrl",
         resolve: {
             contatos: function (contatosAPI) {
@@ -9,11 +9,11 @@
         }
     });
     $routeProvider.when("/novoContato", {
-        templateUrl: "views/novoContato.html",
+        templateUrl: "views/Contatos/novoContato.html",
         controller: "novoContratoCtrl"                                          
     });
     $routeProvider.when("/detalhesContato/:id", {
-        templateUrl: "views/detalhesContato.html",
+        templateUrl: "views/Contatos/detalhesContato.html",
         controller: "detalhesContatoCtrl",
         resolve: {
             contato: function (contatosAPI,$route) {

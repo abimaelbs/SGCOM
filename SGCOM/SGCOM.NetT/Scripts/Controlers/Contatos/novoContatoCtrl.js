@@ -15,4 +15,8 @@
             $location.path("/contatos");
         });
     };
+
+    $scope.atualizarContato = function (contato) {
+        contatosAPI.saveContato
+    };
 });
