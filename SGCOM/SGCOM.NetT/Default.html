@@ -5,9 +5,10 @@
     <title>Lista Telefonica</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="Content/Css/Site.css" type="text/css" />
+    <link rel="stylesheet" href="Content/Css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="Content/Css/ui.css" type="text/css"/>
     <link rel="stylesheet" href="Lib/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="stylesheet/app.css" type="text/css"/>
-    <link rel="stylesheet" href="StyleSheet/ui.css" type="text/css"/>
 
     <!-- JS -->
     <script src="Lib/angular/angular.min.js" type="text/javascript"></script>
@@ -31,8 +32,9 @@
     <script src="Scripts/Directives/uiAlertDirective.js"></script>
     <script src="Scripts/Directives/uiDateDirective.js"></script>
 </head>
-<body>
+<body>    
+    <div ng-include="'Views/Shared/_Menu.html'"></div>
     <div ng-view></div>
-    <div ng-include="'Shared/_Footer.html'"></div>
+    <div ng-include="'Views/Shared/_Footer.html'"></div>
 </body>
 </html>
