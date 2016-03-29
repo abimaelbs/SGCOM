@@ -1,4 +1,8 @@
-﻿angular.module("listaTelefonica").config(function ($routeProvider) {
+﻿angular.module("app").config(function ($routeProvider) {
+    $routeProvider.when("/index", {
+        templateUrl: "views/Home/index.html"
+    });
+
     $routeProvider.when("/contatos", {
         templateUrl: "views/Contatos/contatos.html",
         controller: "listaTelefonicaCtrl",
@@ -8,10 +12,12 @@
             }
         }
     });
+
     $routeProvider.when("/novoContato", {
         templateUrl: "views/Contatos/novoContato.html",
-        controller: "novoContratoCtrl"                                          
+        controller: "novoContratoCtrl"
     });
+
     $routeProvider.when("/detalhesContato/:id", {
         templateUrl: "views/Contatos/detalhesContato.html",
         controller: "detalhesContatoCtrl",
@@ -22,5 +28,5 @@
         }
     });
 
-    $routeProvider.otherwise({redirectTo: "/contatos"});
+    $routeProvider.otherwise({redirectTo: "/index"});
 });

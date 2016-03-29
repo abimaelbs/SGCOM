@@ -1,4 +1,4 @@
-﻿angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope, contatos, contatosAPI) {
+﻿angular.module("app").controller("listaTelefonicaCtrl", function ($scope, contatos, contatosAPI) {
     $scope.app = "Lista Telefonica";
     $scope.contatos = contatos.data;
     $scope.operadoras = [

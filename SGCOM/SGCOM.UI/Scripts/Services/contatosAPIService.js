@@ -14,7 +14,7 @@ angular.module("listaTelefonica").factory("contatosAPI", function ($http, config
     };
 }); */
 
-angular.module("listaTelefonica").service("contatosAPI", function ($http, config) {
+angular.module("app").service("contatosAPI", function ($http, config) {
     this.getContatos = function () {
         return $http.get(config.baseUrl + "/contatos");
     };

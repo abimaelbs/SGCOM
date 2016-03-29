@@ -1,4 +1,4 @@
-﻿angular.module("listaTelefonica").directive("uiAlert", function () {
+﻿angular.module("app").directive("uiAlert", function () {
     return {
         templateUrl: "Shared/_Alert.html",
         replace: true,

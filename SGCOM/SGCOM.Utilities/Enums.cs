@@ -80,7 +80,9 @@ namespace SGCOM.Utilities
             [Description("Venda")]
             Venda = 0,
             [Description("Orçamento")]
-            Orcamento = 1
+            Orcamento = 1,
+            [Description("Consulta")]
+            Consulta = 2
         }
 
         /// <summary>

@@ -2772,6 +2772,7 @@
     <Content Include="Views\Contatos\contatos.html" />
     <Content Include="Views\Contatos\detalhesContato.html" />
     <Content Include="Views\Contatos\novoContato.html" />
+    <Content Include="Views\Home\index.html" />
     <Content Include="Views\Shared\_Alert.html" />
     <Content Include="Views\Shared\_Footer.html" />
     <Content Include="Views\Shared\_Menu.html" />
