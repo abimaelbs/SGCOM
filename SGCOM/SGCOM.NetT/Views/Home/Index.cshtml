@@ -1,0 +1,43 @@
+﻿@Model
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section JavascriptHeader
+{
+    <!-- JS -->
+    <script src="Lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="Lib/angular/angular-messages.js" type="text/javascript"></script>
+    <script src="Lib/angular/i18n/angular-locale_pt-br.js"></script>
+    <script src="Lib/angular/angular-route.min.js"></script>
+    <script src="Lib/ui/ui.js"></script>
+    <script src="Scripts/app.js"></script>
+
+    <script src="Scripts/controlers/Contatos/listaTelefonicaCtrl.js"></script>
+    <script src="Scripts/controlers/Contatos/novoContatoCtrl.js"></script>
+    <script src="Scripts/controlers/Contatos/detalhesContatoCtrl.js"></script>
+
+    <script src="Scripts/Services/contatosAPIService.js"></script>
+
+    <script src="Scripts/config/routeConfig.js"></script>
+
+    <script src="Scripts/Filters/nameFilter.js"></script>
+    <script src="Scripts/Value/configValue.js"></script>
+
+    <script src="Scripts/Directives/uiAlertDirective.js"></script>
+    <script src="Scripts/Directives/uiDateDirective.js"></script>
+
+    <!--
+    <script type="text/javascript">
+        app.factory('bootstrappedData', function() {
+            return {
+                courses: @Html.Raw(Model.Courses),
+                students: @Html.Raw(Model.Students)
+            };
+        });
+    </script> -->
+}
+
+<div class="container">
+    <div ng-view></div>
+</div>

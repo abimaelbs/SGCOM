@@ -1,0 +1,47 @@
+﻿.ui-alert {
+    background-color:#F2DEDE;
+    padding:20px;
+    border-radius:5px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.ui-alert-title {
+    color:#AF4341;
+    font-weight:bold;
+    font-size:24px;
+}
+.ui-alert-message {
+    color:#AF4341;
+}
+
+/* Accordion */
+.ui-accordion-title {
+    width:400px;
+    margin:10px auto 30px auto;
+    background-color:cornflowerblue;
+}
+.ui-accordion-title label{
+	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	padding: 5px 20px;
+	position: relative;
+	z-index: 20;
+	display: block;
+	height: 30px;
+	cursor: pointer;
+	color: #777;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+	line-height: 33px;
+	font-size: 19px;
+	background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+	box-shadow: 
+	0px 0px 0px 1px rgba(155,155,155,0.3), 
+	1px 0px 0px 0px rgba(255,255,255,0.9) inset, 
+	0px 2px 2px rgba(0,0,0,0.1);
+}
+.ui-accordion-title label:hover{
+	background: #fff;
+}
+.ui-accordion-content {
+
+}

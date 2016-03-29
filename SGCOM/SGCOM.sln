@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGCOM.Models", "SGCOM.Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGCOM.Utilities", "SGCOM.Utilities\SGCOM.Utilities.csproj", "{79F5C2B7-E264-4277-876B-98ABC20DA293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGCOM.NetT", "SGCOM.NetT\SGCOM.NetT.csproj", "{F284812C-7CA8-43EA-8CE5-147B465675E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGCOM.UI", "SGCOM.UI\SGCOM.UI.csproj", "{0097E335-5DC0-4AD2-81DE-653F55474737}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{79F5C2B7-E264-4277-876B-98ABC20DA293}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F5C2B7-E264-4277-876B-98ABC20DA293}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79F5C2B7-E264-4277-876B-98ABC20DA293}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F284812C-7CA8-43EA-8CE5-147B465675E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F284812C-7CA8-43EA-8CE5-147B465675E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F284812C-7CA8-43EA-8CE5-147B465675E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F284812C-7CA8-43EA-8CE5-147B465675E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0097E335-5DC0-4AD2-81DE-653F55474737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0097E335-5DC0-4AD2-81DE-653F55474737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0097E335-5DC0-4AD2-81DE-653F55474737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0097E335-5DC0-4AD2-81DE-653F55474737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
