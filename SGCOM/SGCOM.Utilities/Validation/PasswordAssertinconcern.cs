@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SGCOM.Utilities.Validation
 {
-    public class PasswordAssertinconcern
+    public class PasswordAssertinConcern
     {
         public static void AssertIsValid(string password)
         {

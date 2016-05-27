@@ -22,7 +22,9 @@ namespace SGCOM.Data.DataContexts
         public DbSet<Parametro> Parametros { get; set; }
         public DbSet<Permissao> Permissoes { get; set; }
         public DbSet<Caixa> Caixas { get; set; }
+        public DbSet<GrauParentesco> GrauParentescos { get; set; }
         public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<Dependente> Dependentes { get; set; }
         public DbSet<Estado> Estados  { get; set; }
         public DbSet<Municipio> Municipios { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
@@ -56,7 +58,9 @@ namespace SGCOM.Data.DataContexts
             modelBuilder.Configurations.Add(new ParametroMap());
             modelBuilder.Configurations.Add(new PermissaoMap());
             modelBuilder.Configurations.Add(new CaixaMap());
+            modelBuilder.Configurations.Add(new GrauParentescoMap());
             modelBuilder.Configurations.Add(new PessoaMap());
+            modelBuilder.Configurations.Add(new DependenteMap());
             modelBuilder.Configurations.Add(new EstadoMap());
             modelBuilder.Configurations.Add(new MunicipioMap());
             modelBuilder.Configurations.Add(new EnderecoMap());
@@ -90,6 +94,12 @@ namespace SGCOM.Data.DataContexts
             });
             context.Estados.Add(new Estado { Id = 0, Nome = "Mato Grosso" });           
             context.Municipios.Add(new Municipio { Id = 0, Nome = "Cuiabá", EstadoId = 1 });
+
+            context.GrauParentescos.Add(new GrauParentesco { Id = 0, DescricaoParentesco = "Filho(a)" });
+            context.GrauParentescos.Add(new GrauParentesco { Id = 0, DescricaoParentesco = "Esposa(o)" });
+            context.GrauParentescos.Add(new GrauParentesco { Id = 0, DescricaoParentesco = "Enteado(a)" });
+            context.GrauParentescos.Add(new GrauParentesco { Id = 0, DescricaoParentesco = "Pai" });
+            context.GrauParentescos.Add(new GrauParentesco { Id = 0, DescricaoParentesco = "Mãe" });
 
             context.ListaTelefonica.Add(new ListaTelefonica { Id = 0, Nome = "Pedro", Telefone = "9999988", Cor = "blue" });
             context.ListaTelefonica.Add(new ListaTelefonica { Id = 0, Nome = "Ana", Telefone = "30520098", Cor = "yellow" });

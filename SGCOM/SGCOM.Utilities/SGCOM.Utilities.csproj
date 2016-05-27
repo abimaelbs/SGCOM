@@ -51,7 +51,7 @@
     <Compile Include="Validation\CNPJAssertionConcern.cs" />
     <Compile Include="Validation\CPFAssertionConcern.cs" />
     <Compile Include="Validation\EmailAssertionConcern.cs" />
-    <Compile Include="Validation\PasswordAssertinconcern.cs" />
+    <Compile Include="Validation\PasswordAssertinConcern.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Errors.resx">

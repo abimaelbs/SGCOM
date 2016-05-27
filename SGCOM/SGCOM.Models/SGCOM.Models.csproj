@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="Entities\Caixa.cs" />
     <Compile Include="Entities\Categoria.cs" />
+    <Compile Include="Entities\Dependente.cs" />
     <Compile Include="Entities\Fornecedor.cs" />
+    <Compile Include="Entities\GrauParentesco.cs" />
     <Compile Include="Entities\ListaTelefonica.cs" />
     <Compile Include="Entities\Pedido.cs" />
     <Compile Include="Entities\PedidoItens.cs" />

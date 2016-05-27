@@ -55,8 +55,10 @@
     <Compile Include="DataContexts\SGComDataContext.cs" />
     <Compile Include="Mappings\CategoriaMap.cs" />
     <Compile Include="Mappings\ClienteMap.cs" />
+    <Compile Include="Mappings\DependenteMap.cs" />
     <Compile Include="Mappings\EmpresaMap.cs" />
     <Compile Include="Mappings\FornecedorMap.cs" />
+    <Compile Include="Mappings\GrauParentescoMap.cs" />
     <Compile Include="Mappings\ListaTelefonicaMap.cs" />
     <Compile Include="Mappings\MenuMap.cs" />
     <Compile Include="Mappings\ParametroMap.cs" />

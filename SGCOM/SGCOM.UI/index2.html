@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>AngularJS - Lista de Compras</title>
+    <script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+	<meta charset="utf-8" />
+    <script type="text/javascript">
+        function ListaComprasController($scope)
+        {
+            $scope.itens = [
+                { produto: 'Leite', quantidade: 2, comprado: false },
+                { produto: 'Pão', quantidade: 12, comprado: false }
+            ];
+
+            $scope.adicionarItem = function () {
+                $scope.itens.push(
+                    {
+                        produto: $scope.item.produto,
+                        quantidade: $scope.item.quantidade,
+                        comprado:false
+                    });
+            }
+
+        }
+    </script>
+</head>
+<body>    
+    <div ng-controller="ListaComprasController">
+        <form class="form-inline" name="formItem">
+            <input type="text" ng-model="item.produto" />
+            <input type="number" ng-model="item.quantidade" />
+            <button ng-click="adicionarItem()">Adicionar Item</button>
+        </form>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>                    
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in itens">
+                    <td><strong>{{item.produto}}</strong></td>
+                    <td>{{item.quantidade}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
