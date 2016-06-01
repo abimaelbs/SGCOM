@@ -12,9 +12,9 @@ namespace SGCOM.Models.Entities
         public string TituloEleitor { get; set; }
         public int Estadocivil { get; set; }
         public int TipoPessoa { get; set; }
-        public string NomePai { get; set; }
-        public string NomeMae { get; set; }
-        public string NomeConjuge { get; set; }
+        //public string NomePai { get; set; }
+        //public string NomeMae { get; set; }
+        //public string NomeConjuge { get; set; }
         //public int QuantidadeFilhos { get; set; }        
         public DateTime DataNascimento { get; set; }        
         public DateTime DataCadastro { get; set; }
