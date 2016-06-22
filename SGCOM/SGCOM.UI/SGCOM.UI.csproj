@@ -342,9 +342,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Css\app.css" />
-    <Content Include="Content\Css\Site.css" />
-    <Content Include="Content\Css\ui.css" />
+    <Content Include="Css\app.css" />
+    <Content Include="Css\Site.css" />
+    <Content Include="Css\ui.css" />
     <Content Include="Lib\angular\angular-animate.js" />
     <Content Include="Lib\angular\angular-animate.min.js" />
     <Content Include="Lib\angular\angular-aria.js" />
@@ -2759,16 +2759,16 @@
     <Content Include="Lib\bootstrap\bootstrap.css" />
     <Content Include="Lib\bootstrap\bootstrap.js" />
     <Content Include="Lib\ui\ui.js" />
-    <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\config\routeConfig.js" />
-    <Content Include="Scripts\Controlers\Contatos\detalhesContatoCtrl.js" />
-    <Content Include="Scripts\Controlers\Contatos\listaTelefonicaCtrl.js" />
-    <Content Include="Scripts\Controlers\Contatos\novoContatoCtrl.js" />
-    <Content Include="Scripts\Directives\uiAlertDirective.js" />
-    <Content Include="Scripts\Directives\uiDateDirective.js" />
-    <Content Include="Scripts\Filters\nameFilter.js" />
-    <Content Include="Scripts\Services\contatosAPIService.js" />
-    <Content Include="Scripts\Value\configValue.js" />
+    <Content Include="Js\app.js" />
+    <Content Include="Js\config\routeConfig.js" />
+    <Content Include="Ctrl\Contatos\detalhesContatoCtrl.js" />
+    <Content Include="Ctrl\Contatos\listaTelefonicaCtrl.js" />
+    <Content Include="Ctrl\Contatos\novoContatoCtrl.js" />
+    <Content Include="Js\Directives\uiAlertDirective.js" />
+    <Content Include="Js\Directives\uiDateDirective.js" />
+    <Content Include="Js\Filters\nameFilter.js" />
+    <Content Include="Js\Services\contatosAPIService.js" />
+    <Content Include="Js\Value\configValue.js" />
     <Content Include="Views\Contatos\contatos.html" />
     <Content Include="Views\Contatos\detalhesContato.html" />
     <Content Include="Views\Contatos\novoContato.html" />
