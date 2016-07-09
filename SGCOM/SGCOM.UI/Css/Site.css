@@ -81,3 +81,10 @@ table.data td
 border:1px solid #c3c3c3;
 padding:3px;
 }
+#divCenter {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 0.5%;
+    background-color: ActiveCaption;
+}
