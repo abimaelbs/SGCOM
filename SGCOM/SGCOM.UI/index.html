@@ -31,6 +31,24 @@
 
         }
     </script>
+
+    <style type="text/css">
+        #newPreview {
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+        }
+    </style>
+
+
+    <script language="javascript" type="text/javascript">
+    function PreviewImg(imgFile)
+    {
+        var newPreview = document.getElementById("newPreview");
+        newPreview.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgFile.value;
+        newPreview.style.width = "80px";
+        newPreview.style.height = "60px";
+    }
+    </script>
+
 </head>
 <body>
     <!-- Menu -->
@@ -74,5 +92,14 @@
             </table>
         </form>
     </div>
+
+    <form id="form1" runat="server">
+        <div>
+            preview
+            <asp:FileUpload ID="Fud_Pic" runat="server" onchange="PreviewImg(this)" />
+            <div id="newPreview">
+            </div>
+        </div>
+    </form>
 </body>
 </html>

@@ -10,6 +10,7 @@ namespace SGCOM.Models.Entities
         public long Cpf { get; set; }
         public string Rg { get; set; }
         public string TituloEleitor { get; set; }
+        public string Email { get; set; }
         public int Estadocivil { get; set; }
         public int TipoPessoa { get; set; }
         //public string NomePai { get; set; }
