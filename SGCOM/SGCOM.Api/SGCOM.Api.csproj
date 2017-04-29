@@ -219,6 +219,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\SGCOM.pubxml" />
+    <None Include="Web.LOCAL.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

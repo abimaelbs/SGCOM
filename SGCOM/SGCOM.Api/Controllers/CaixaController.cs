@@ -1,10 +1,10 @@
-﻿using SGCOM.Data.DataContexts;
-using SGCOM.Models.Entities;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SGCOM.Data.DataContexts;
+using SGCOM.Models.Entities;
 
 namespace SGCOM.Api.Controllers
 {
