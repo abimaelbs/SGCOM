@@ -30,7 +30,7 @@ namespace SGCOM.Api.Controllers
         }
 
         [HttpGet]
-        [Route("categorias/{categoriaId}")]
+        [Route("categoria/{categoriaId}")]
         public HttpResponseMessage GetCategoriaById(int categoriaId)
         {
             var result = db.Categorias.Where(x => x.Id == categoriaId).ToList();
@@ -42,7 +42,7 @@ namespace SGCOM.Api.Controllers
         #region Inserir
 
         [HttpPost]
-        [Route("categorias")]
+        [Route("categoria")]
         public HttpResponseMessage PostCategorias(Categoria categoria)
         {
             if (categoria == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
@@ -66,7 +66,7 @@ namespace SGCOM.Api.Controllers
         #region Update
 
         [HttpPut]
-        [Route("categorias")]
+        [Route("categoria")]
         public HttpResponseMessage PutUsuarios(Categoria categoria)
         {
             if (categoria == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
@@ -90,7 +90,7 @@ namespace SGCOM.Api.Controllers
         #region Excluir
 
         [HttpDelete]
-        [Route("categorias/{categoriaId}")]
+        [Route("categoria/{categoriaId}")]
         public HttpResponseMessage DeleteCategorias(int categoriaId)
         {
             if (categoriaId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);

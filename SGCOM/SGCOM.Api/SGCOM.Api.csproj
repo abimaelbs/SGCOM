@@ -218,6 +218,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\SGCOM.pubxml" />
     <None Include="Web.LOCAL.config">
       <DependentUpon>Web.config</DependentUpon>
