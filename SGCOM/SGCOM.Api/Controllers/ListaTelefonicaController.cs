@@ -18,6 +18,10 @@ namespace SGCOM.Api.Controllers
         #endregion Objeto Conexão
 
         #region Filtros
+
+        /// <summary>
+        /// Retorna Lista de Contatos
+        /// </summary>        
         [HttpGet]
         [Route("contatos")]
         public HttpResponseMessage GetContatos()

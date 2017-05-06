@@ -13,11 +13,16 @@ namespace SGCOM.Api.Controllers
     public class CategoriaController : ApiController
     {
         #region Objeto Conexão
+
         private SGCOMDataContext db = new SGCOMDataContext();
+
         #endregion Objeto Conexão
 
-        #region Filtros
+        #region Read
 
+        /// <summary>
+        /// Retorna lista de Categorias
+        /// </summary>        
         [HttpGet]
         [Route("categorias")]
         public HttpResponseMessage GetCategorias()
@@ -29,21 +34,31 @@ namespace SGCOM.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.NotFound,result);
         }
 
+        /// <summary>
+        /// Retorna Categoria por Id
+        /// </summary>
+        /// <param name="categoriaId">Id categoria</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("categoria/{categoriaId}")]
         public HttpResponseMessage GetCategoriaById(int categoriaId)
         {
             var result = db.Categorias.Where(x => x.Id == categoriaId).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, result);
-
         }
-        #endregion Filtros
 
-        #region Inserir
+        #endregion Read
+
+        #region Write
+
+        /// <summary>
+        /// Adiciona nova Categoria
+        /// </summary>
+        /// <param name="categoria">Categoria</param>
 
         [HttpPost]
         [Route("categoria")]
-        public HttpResponseMessage PostCategorias(Categoria categoria)
+        public HttpResponseMessage PostCategoria(Categoria categoria)
         {
             if (categoria == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
@@ -61,13 +76,13 @@ namespace SGCOM.Api.Controllers
             }
         }
 
-        #endregion Inserir
-
-        #region Update
-
+        /// <summary>
+        /// Alterar uma Categoria
+        /// </summary>
+        /// <param name="categoria">Categoria</param>        
         [HttpPut]
         [Route("categoria")]
-        public HttpResponseMessage PutUsuarios(Categoria categoria)
+        public HttpResponseMessage PutCategoria(Categoria categoria)
         {
             if (categoria == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
@@ -85,13 +100,14 @@ namespace SGCOM.Api.Controllers
             }
         }
 
-        #endregion Update
-
-        #region Excluir
-
+        /// <summary>
+        /// Excluir uma Categoria
+        /// </summary>
+        /// <param name="categoriaId">Id Categoria</param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("categoria/{categoriaId}")]
-        public HttpResponseMessage DeleteCategorias(int categoriaId)
+        public HttpResponseMessage DeleteCategoria(int categoriaId)
         {
             if (categoriaId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
 
@@ -104,17 +120,19 @@ namespace SGCOM.Api.Controllers
             }
             catch (Exception)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao alterar categoria.");
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Falha ao excluir categoria.");
             }
         }
 
-        #endregion Excluir
+        #endregion Write
 
         #region Dispose
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
         }
+
         # endregion Dispose
     }
 }
