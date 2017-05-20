@@ -19,7 +19,7 @@ namespace SGCOM.Api.Controllers
         #region Read
 
         [HttpGet]
-        [Route("produtos")]
+        [Route("produtos2")]
         public HttpResponseMessage GetProdutos()
         {
             var result = db.Produto2s.ToList();
@@ -27,7 +27,7 @@ namespace SGCOM.Api.Controllers
         }
 
         [HttpGet]
-        [Route("produto/{produtoId}")]
+        [Route("produto2/{produtoId}")]
         public HttpResponseMessage GetProdutoById(int produtoId)
         {
             var result = db.Produto2s.Where(x => x.Id == produtoId).ToList();
@@ -39,7 +39,7 @@ namespace SGCOM.Api.Controllers
         #region Write
 
         [HttpPost]
-        [Route("produto")]
+        [Route("produto2")]
         public HttpResponseMessage PostProdutos(Produto2 produto)
         {
             if (produto == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
@@ -59,7 +59,7 @@ namespace SGCOM.Api.Controllers
         }
 
         [HttpPut]
-        [Route("produto")]
+        [Route("produto2")]
         public HttpResponseMessage PutProdutos(Produto2 produto)
         {
             if (produto == null) return Request.CreateResponse(HttpStatusCode.BadRequest);
@@ -79,7 +79,7 @@ namespace SGCOM.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("produto/{produtoId}")]
+        [Route("produto2/{produtoId}")]
         public HttpResponseMessage DeleteProdutos(int produtoId)
         {
             if (produtoId < 0) return Request.CreateResponse(HttpStatusCode.BadRequest);
