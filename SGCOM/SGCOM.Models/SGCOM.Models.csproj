@@ -59,6 +59,7 @@
     <Compile Include="Entities\Parametro.cs" />
     <Compile Include="Entities\Pessoa.cs" />
     <Compile Include="Entities\Produto.cs" />
+    <Compile Include="Entities\Produto2.cs" />
     <Compile Include="Entities\SubMenu.cs" />
     <Compile Include="Entities\Unidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

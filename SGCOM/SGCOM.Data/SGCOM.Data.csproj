@@ -71,6 +71,7 @@
     <Compile Include="Mappings\GrupoMap.cs" />
     <Compile Include="Mappings\MunicipioMap.cs" />
     <Compile Include="Mappings\PessoaMap.cs" />
+    <Compile Include="Mappings\Produto2Map.cs" />
     <Compile Include="Mappings\ProdutoMap.cs" />
     <Compile Include="Mappings\SubMenuMap.cs" />
     <Compile Include="Mappings\UnidadeMap.cs" />

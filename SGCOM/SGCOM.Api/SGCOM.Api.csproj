@@ -206,6 +206,7 @@
     <Compile Include="Controllers\PedidoItensController.cs" />
     <Compile Include="Controllers\PermissaoController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
+    <Compile Include="Controllers\Produto2Controller.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\SubMenuController.cs" />
     <Compile Include="Controllers\UnidadeController.cs" />

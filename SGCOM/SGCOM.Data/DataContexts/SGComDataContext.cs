@@ -35,6 +35,7 @@ namespace SGCOM.Data.DataContexts
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<PedidoItens> PedidoITens { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Produto2> Produto2s { get; set; }
         public DbSet<Unidade> Unidades { get; set; }
 
         public DbSet<ListaTelefonica> ListaTelefonica { get; set; }
@@ -71,6 +72,7 @@ namespace SGCOM.Data.DataContexts
             modelBuilder.Configurations.Add(new PedidoMap());
             modelBuilder.Configurations.Add(new PedidoItensMap());
             modelBuilder.Configurations.Add(new ProdutoMap());
+            modelBuilder.Configurations.Add(new Produto2Map());
             modelBuilder.Configurations.Add(new UnidadeMap());
 
             modelBuilder.Configurations.Add(new ListaTelefonicaMap());
