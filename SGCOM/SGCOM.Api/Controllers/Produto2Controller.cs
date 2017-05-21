@@ -18,6 +18,9 @@ namespace SGCOM.Api.Controllers
 
         #region Read
 
+        /// <summary>
+        /// Retorna lista de Produtos
+        /// </summary> 
         [HttpGet]
         [Route("produtos2")]
         public HttpResponseMessage GetProdutos()
@@ -26,6 +29,11 @@ namespace SGCOM.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
 
+        /// <summary>
+        /// Retorna Produto por Id
+        /// </summary>
+        /// <param name="produtoId">Identificador</param>
+        /// <returns></returns>
         [HttpGet]
         [Route("produto2/{produtoId}")]
         public HttpResponseMessage GetProdutoById(int produtoId)
@@ -37,7 +45,11 @@ namespace SGCOM.Api.Controllers
         #endregion Read
 
         #region Write
-
+        /// <summary>
+        /// Adiciona novo produto
+        /// </summary>
+        /// <param name="produto">Produto</param>
+        /// <returns></returns>
         [HttpPost]
         [Route("produto2")]
         public HttpResponseMessage PostProdutos(Produto2 produto)
@@ -58,6 +70,11 @@ namespace SGCOM.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Altera um produto
+        /// </summary>
+        /// <param name="produto">Produto</param>
+        /// <returns></returns>
         [HttpPut]
         [Route("produto2")]
         public HttpResponseMessage PutProdutos(Produto2 produto)
@@ -78,6 +95,11 @@ namespace SGCOM.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Exclui um produto
+        /// </summary>
+        /// <param name="produtoId"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("produto2/{produtoId}")]
         public HttpResponseMessage DeleteProdutos(int produtoId)
